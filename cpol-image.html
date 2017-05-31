@@ -161,8 +161,8 @@ Don't forget to handle both type carefully or you got an error.
         var img = new Image;
         img.onload = function() {
           if (!URL){
-            delete this.src;
-            delete reader;
+            this.src = "";
+            reader = {};
           } else {
             URL.revokeObjectURL(this.src);
           }
